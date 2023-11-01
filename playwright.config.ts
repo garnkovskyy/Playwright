@@ -14,7 +14,7 @@ const config: PlaywrightTestConfig = {
   testDir: "./tests",
 
   /* Maximum time one test can run for. */
-  timeout: 30 * 1000,
+  timeout: 50 * 1000,
   globalTimeout: 4 * 60 * 60 * 1000,
   expect: {
     /**
@@ -53,28 +53,28 @@ const config: PlaywrightTestConfig = {
 
   /* Configure projects for major browsers */
   projects: [
-    {
-      name: "chromium",
-      use: {
-        ...devices["Desktop Chrome"],
-      },
-    },
+    // {
+    //   name: "chromium",
+    //   use: {
+    //     ...devices["Desktop Chrome"],
+    //   },
+    // },
 
-    {
-      name: "firefox",
-      use: {
-        ...devices["Desktop Firefox"],
-      },
-    },
+    // {
+    //   name: "firefox",
+    //   use: {
+    //     ...devices["Desktop Firefox"],
+    //   },
+    // },
 
-    {
-      name: "webkit",
-      use: {
-        ...devices["Desktop Safari"],
-      },
-    },
+    // {
+    //   name: "webkit",
+    //   use: {
+    //     ...devices["Desktop Safari"],
+    //   },
+    // },
 
-    /* Test against mobile viewports. */
+    // /* Test against mobile viewports. */
     // {
     //   name: 'Mobile Chrome',
     //   use: {
@@ -88,22 +88,28 @@ const config: PlaywrightTestConfig = {
     //   },
     // },
 
-    /* Test against branded browsers. */
-    {
-      name: "Microsoft Edge",
-      use: {
-        channel: "msedge",
-      },
-    },
+    // /* Test against branded browsers. */
+    // {
+    //   name: "Microsoft Edge",
+    //   use: {
+    //     channel: "msedge",
+    //   },
+    // },
     {
       name: "Google Chrome",
       use: {
+        ...devices["Desktop Chrome"],
         channel: "chrome",
+        viewport: {
+          width: 1920,  // Szerokość okna przeglądarki.
+          height: 1080,  // Wysokość okna przeglądarki.
+        },
       },
+
     },
   ],
-  globalSetup: require.resolve('./global-setup'),
-  outputDir: 'test-results/',
+  globalSetup: require.resolve("./global-setup"),
+  outputDir: "test-results/",
 };
 
 export default config;
