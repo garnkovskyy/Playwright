@@ -35,6 +35,8 @@ const config: PlaywrightTestConfig = {
   reporter: "html",
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+    viewport: null,
+    // deviceScaleFactor: 1,
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     launchOptions: {
       slowMo: 200,
@@ -99,6 +101,9 @@ const config: PlaywrightTestConfig = {
       name: "Google Chrome",
       use: {
         channel: "chrome",
+        launchOptions: {
+          args: ['--start-maximized'] 
+      },
       },
     },
   ],

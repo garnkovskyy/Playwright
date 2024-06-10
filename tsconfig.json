@@ -23,7 +23,7 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "test-examples/*": ["test-examples/*"]
+      "test-examples/*": ["tests/functional/*"]
     }
   },
   "include": ["**/*.ts"]
