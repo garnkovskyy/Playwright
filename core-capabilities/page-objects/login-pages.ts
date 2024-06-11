@@ -33,23 +33,3 @@ export async function GoToPage(page: Page) {
   }
 
   
-  export async function LoginMechanism(page: Page) {
-    
-      
-      
-      await page.locator("[type=email]").fill("rec.regression@outlook.com");
-  
-      await page.getByRole("button", { name: "Next" }).click();
-      await page.getByRole("button", { name: "Work or school account" }).click();
-      
-      await page.getByLabel("E-mail address").fill("rec.regression@outlook.com");
-      await page.getByLabel("Password").fill("ko1EhUdreMoro!");
-      await page.getByRole("button", { name: "Login" }).click();
-  
-  }
-  export async function LoginMechanism(page: Page) {
-    
-      await page.locator('[data-testid="login-page-sign-in-with-ABB_AD"]').click();
-      await page.locator("[type=email]").fill("rec.regression@outlook.com");
-  
-  }

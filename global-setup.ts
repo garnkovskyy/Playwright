@@ -14,7 +14,7 @@ export class Config {
   shouldLogData: boolean = process.env.LOG_DATA
     ? getEnvironmentVariableAsBoolean(process.env.LOG_DATA)
     : true;
-  appUrl: string = ``;
+  appUrl: string = `TEST`;
   language: Languages = language;
   translations: Translation = getTranslations(language);
 
